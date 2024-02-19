@@ -8,6 +8,7 @@ import java.util.List;
 
 public class BuscarTorneosUseCase implements IBuscarTorneosUseCase {
 
+	//Se pone una interfaz que son detalles, pero de donde provenga no es problema del modelo
 	private final ITorneoRepository torneoRepository;
 	
 	public BuscarTorneosUseCase(ITorneoRepository torneoRepository) {

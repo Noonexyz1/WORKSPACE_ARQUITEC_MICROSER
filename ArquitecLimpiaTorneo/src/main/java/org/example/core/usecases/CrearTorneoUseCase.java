@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public class CrearTorneoUseCase implements ICrearTorneoUseCase {
 
+	//Se pone una interfaz que son detalles, pero de donde provenga no es problema del modelo
 	private final ITorneoRepository torneoRepository;
 	
 	public CrearTorneoUseCase(ITorneoRepository torneoRepository) {
