@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.domain.valueObject.AbogadoEmail;
 import org.example.domain.valueObject.AbogadoId;
-import org.example.domain.valueObject.AbogadoNombre;
 
 @Getter
 @Setter
@@ -14,7 +13,7 @@ import org.example.domain.valueObject.AbogadoNombre;
 @AllArgsConstructor
 public class Abogado {
     private AbogadoId id;
-    private AbogadoNombre nombre;
+    private String nombre;
     private AbogadoEmail email;
 }
 
