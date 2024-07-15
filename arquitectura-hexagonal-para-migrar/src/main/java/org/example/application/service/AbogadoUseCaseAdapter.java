@@ -9,6 +9,10 @@ public class AbogadoUseCaseAdapter implements AbogadoService {
 
     private AbogadoUseCase abogadoUseCase;
 
+    public AbogadoUseCaseAdapter(AbogadoUseCase abogadoUseCase){
+        this.abogadoUseCase = abogadoUseCase;
+    }
+
     @Override
     public List<String> listarCasosService() {
         //demas logica
