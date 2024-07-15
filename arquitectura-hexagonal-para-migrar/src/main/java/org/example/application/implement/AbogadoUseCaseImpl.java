@@ -2,15 +2,24 @@ package org.example.application.implement;
 
 import org.example.domain.useCase.AbogadoUseCase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AbogadoUseCaseImpl implements AbogadoUseCase {
 
     private List<String> listaCasos;
 
+    public AbogadoUseCaseImpl() {
+        this.listaCasos = new ArrayList<>();
+        listaCasos.add("Caso1");
+        listaCasos.add("Caso2");
+        listaCasos.add("Caso3");
+        listaCasos.add("Caso4");
+        listaCasos.add("Caso5");
+    }
+
     @Override
     public List<String> listarCasos() {
-        listaCasos = List.of("Caso1", "Caso2", "Caso3", "Caso4", "Caso5", "Caso6");
         return listaCasos;
     }
 

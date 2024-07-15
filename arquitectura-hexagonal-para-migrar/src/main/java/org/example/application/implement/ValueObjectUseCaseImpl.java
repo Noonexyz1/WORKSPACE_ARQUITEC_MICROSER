@@ -1,4 +1,4 @@
-package org.example.application.validator;
+package org.example.application.implement;
 
 //podemos observar que estamos usando el dominio, y el dominio no esta utilizando cosas de la capa superior
 import org.example.domain.exception.CorreoInvalidoException;
@@ -8,7 +8,7 @@ import org.example.domain.useCase.ValueObjectUseCase;
 import static org.example.domain.enums.CodigoValueException.CORREO_INVALIDO;
 import static org.example.domain.enums.CodigoValueException.ID_INVALIDO;
 
-public class AbogadoValueObjectValidator implements ValueObjectUseCase {
+public class ValueObjectUseCaseImpl implements ValueObjectUseCase {
 
     @Override
     public void validarCampoID(String id) {
