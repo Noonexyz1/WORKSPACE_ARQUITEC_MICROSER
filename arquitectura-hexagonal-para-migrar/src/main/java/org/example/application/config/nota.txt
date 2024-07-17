@@ -1,0 +1,11 @@
+NOTA de config:
+No necesito implementar estas clases de este paquete config, ya que esta implementacion se las va
+a enviar desde la infraestructura como dependencia a la capa de application, y posteriormente, estos pueden ser
+implementados con @Configuration de Spring y crear el bean con @Bean en el caso de Spring.
+
+No necesito crearme una maquina injector de dependencia como lo hize en este paquete, el framework se debe
+encargar de ello.
+
+yo unicamente debo exponer el puerto y tener implementadas los Use Cases del Dominio
+
+OJO: pero es una forma de hacerlo tambien para que la infraestructura no conozca los detalles del dominio

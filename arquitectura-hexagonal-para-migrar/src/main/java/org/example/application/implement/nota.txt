@@ -1,0 +1,7 @@
+NOTA del paquete implement
+Estas implementaciones son dependencias, cosa que al momento de exponer la interfaz AbogadoUseCase como puerto
+a la infraestructura, se hara uso de las implementaciones que existan en la capa de application (osea estas mismas)
+para que el puerto servicio los exponga. Desde la infraestructura se debe hacer la injeccion con Spring si es el
+caso pero de estas implementaciones de la capa application, entonces de esa forma, la infraestructura hace uso
+unicamente de la capa application y no va directamente al dominio, y asi se ve mucho mas limpio las responsabilidades
+de cada capa

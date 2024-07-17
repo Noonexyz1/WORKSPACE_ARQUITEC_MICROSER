@@ -9,6 +9,7 @@ public class AbogadoServiceImpl implements AbogadoService {
 
     private AbogadoUseCase abogadoUseCase;
 
+    //esto sera injectado desde la capa exterior Infraestructura
     public AbogadoServiceImpl(AbogadoUseCase abogadoUseCase){
         this.abogadoUseCase = abogadoUseCase;
     }
