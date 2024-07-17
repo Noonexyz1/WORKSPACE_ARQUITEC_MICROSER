@@ -39,6 +39,9 @@ public class Main {
         //Una solucion es mover la interfaz de AbogadoUseCase del dominio a la capa de APPLICATION
         AbogadoUseCase useCase = new AbogadoUseCaseImpl();
 
+        //O tambien puede ser asi, y esto ya no conoce el Dominio :)
+        //AbogadoUseCaseImpl useCase = new AbogadoUseCaseImpl();
+
         //Uso de la capa Application
         AbogadoService servicio = new AbogadoServiceImpl(useCase);
 
