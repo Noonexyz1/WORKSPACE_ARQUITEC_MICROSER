@@ -1,0 +1,21 @@
+El flujo es la siguiente:
+En la capa de dominio me defino una interfaz de contrato de dominio, esa interfaz
+la tiene que implementar la capa application con un adapter, las dependecias necesarias que yo necesite para
+cumplir con el contrato del dominio (la logica necesaria) de ese adapter deben ser, otra
+vez, interfaces mias creadas en la capa de application sin implementacion (interfaz adicional), porque estas
+mismas interfaces son puertos hacia el exterior y unicamnete debemos exportar por cada capa una interfaz puerto,
+las futuras implementaciones
+de esta interfaz las debe realizar la capa superior inmediato (adapter) y asi sucesivamente con las capas
+que hubieran mas arriba o mas al exterior.
+
+y porque exportar unicamente interfaces para que las usen las capas inmediatas?
+pues estas futuras implementaciones pueden ser cumplidas de muchas formas y con muchas
+tecnologias habidas y por haber, pero el punto es que las reglas que definamos en estas
+interfaces, minimamente deben ser cumplidas por las tecnologias que hubieran en el mercado o la
+forma que hubiera que tengamos que usar, para cumplir con el contrato.
+
+y que tal si ya me decidi por utilizar una tecnonlogia o lo que sea?
+pues me creo una clase adapter que implementa el puerto de la capa interior, una vez hecho eso,
+me creo una instancia que ya se que es la dependencia necesaria de la capa application para funcionar,
+porque esta capa quiere esa implementacion que ahora si esta en la capa de afuera para poder funcionar, entonces, creamos
+la instancia y la injectamos.
