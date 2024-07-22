@@ -14,10 +14,10 @@ public class RepoInMemoryAdapter implements AbogadoService {
 
     public RepoInMemoryAdapter() {
         abogados = new ArrayList<>();
-        abogados.add(new AbogadoDTO("1", "2", "3"));
-        abogados.add(new AbogadoDTO("4", "2", "3"));
-        abogados.add(new AbogadoDTO("7", "2", "3"));
-        abogados.add(new AbogadoDTO("10", "2", "3"));
+        abogados.add(new AbogadoDTO(1, "2", "3"));
+        abogados.add(new AbogadoDTO(2, "2", "3"));
+        abogados.add(new AbogadoDTO(3, "2", "3"));
+        abogados.add(new AbogadoDTO(4, "2", "3"));
     }
 
     @Override

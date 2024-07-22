@@ -14,10 +14,10 @@ public class RepoAdapterAPIExterior implements AbogadoService {
 
     public RepoAdapterAPIExterior() {
         abogados = new ArrayList<>();
-        abogados.add(new AbogadoDTO("AAA", "2", "3"));
-        abogados.add(new AbogadoDTO("BBB", "2", "3"));
-        abogados.add(new AbogadoDTO("CCC", "2", "3"));
-        abogados.add(new AbogadoDTO("DDD", "2", "3"));
+        abogados.add(new AbogadoDTO(111, "2", "3"));
+        abogados.add(new AbogadoDTO(222, "2", "3"));
+        abogados.add(new AbogadoDTO(333, "2", "3"));
+        abogados.add(new AbogadoDTO(444, "2", "3"));
     }
 
     @Override

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class Abogado {
-    private String id;
+    private int id;
     private String nombre;
     private String email;
 }

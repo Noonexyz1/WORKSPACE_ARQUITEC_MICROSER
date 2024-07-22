@@ -13,18 +13,18 @@ public class Main {
         //Implementando BD
 
         // Inicializa HibernateUtil
-        //HibernateUtil hibernateUtil = new HibernateUtil("hibernate.cfg.xml");
+        HibernateUtil hibernateUtil = new HibernateUtil("hibernate1.cfg.xml");
 
         //Crea una instancia de RepoHibernateMariaDB
         //puerto de mi Application  =  Implementacion de mi Adapter Infrastructure (esto es lo unico que cambia)
         //CAMBIANDO DE IMPLEMENTACION
-        //AbogadoService abogadoService = new RepoHibernateMariaDB(hibernateUtil.getSessionFactory());
+        AbogadoService abogadoService = new RepoHibernateMariaDB(hibernateUtil.getSessionFactory());
         //AbogadoService abogadoService = new RepoAdapterAPIExterior();
-        AbogadoService abogadoService = new RepoInMemoryAdapter();
+        //AbogadoService abogadoService = new RepoInMemoryAdapter();
         //AbogadoService abogadoService = new RepoInMemoryAdapter2();
 
         // Ejemplo de uso de saveNewAbogado
-        abogadoService.saveNewAbogado(new AbogadoDTO("Juan Pérez", "12", "3"));
+        abogadoService.saveNewAbogado(new AbogadoDTO(1 /*Este id es AUTOINCREMENT, no hace falta*/, "Diego D.", "diego@diego.com"));
 
         // Ejemplo de uso de getAllAbogados
         System.out.println("Lista de abogados:");

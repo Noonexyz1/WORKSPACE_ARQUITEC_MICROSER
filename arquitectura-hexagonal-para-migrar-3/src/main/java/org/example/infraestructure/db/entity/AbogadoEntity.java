@@ -1,24 +1,24 @@
 package org.example.infraestructure.db.entity;
 
 public class AbogadoEntity {
-    private String id;
+    private int id;
     private String nombre;
     private String email;
 
     public AbogadoEntity() {
     }
 
-    public AbogadoEntity(String id, String nombre, String email) {
+    public AbogadoEntity(int id, String nombre, String email) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

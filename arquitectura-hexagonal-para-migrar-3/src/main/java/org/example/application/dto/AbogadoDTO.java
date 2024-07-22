@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class AbogadoDTO {
-    private String id;
+    private int id;
     private String nombre;
     private String email;
 }
