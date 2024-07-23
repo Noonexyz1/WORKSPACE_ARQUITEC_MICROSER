@@ -7,11 +7,19 @@ import org.example.infraestructure.db.util.HibernateUtil;
 import org.example.infraestructure.memory.RepoAdapterAPIExterior;
 import org.example.infraestructure.memory.RepoInMemoryAdapter;
 import org.example.infraestructure.memory.RepoInMemoryAdapter2;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        //Implementando BD
 
+        //Implementacion del REST, si esto se ejecuta al ultimo de t odo, el codigo
+        //t odo eso se reinicia, quiza por la configuracion de los beans, pero funciona
+        SpringApplication.run(Main.class, args);
+
+
+        //Implementando BD
         // Inicializa HibernateUtil
         HibernateUtil hibernateUtil = new HibernateUtil("hibernate1.cfg.xml");
 
@@ -33,7 +41,7 @@ public class Main {
         }
 
         // Cierra la SessionFactory
-        //hibernateUtil.shutdown();
+        hibernateUtil.shutdown();
 
     }
 }
