@@ -1,5 +1,5 @@
 # Usa una imagen base de JDK 17
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
 
 # Instala Maven
 RUN apt-get update && \
