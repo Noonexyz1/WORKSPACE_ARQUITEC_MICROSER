@@ -1,0 +1,31 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: micro-save-student
+  config:
+    import: optional:configserver:http://localhost:8888
+
+
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.17.0.2:5432/student
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: create  # Puede ser 'none', 'validate', 'update', o 'create-drop'
+    show-sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  instance:
+    hostname: localhost  # Nombre del host para la instancia de Eureka. Este valor puede ser utilizado para registrar y identificar la instancia en el servidor Eureka.
+  client:
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # URL del servidor Eureka al que el cliente se conectará para registrar el servicio y descubrir otros servicios registrados.
