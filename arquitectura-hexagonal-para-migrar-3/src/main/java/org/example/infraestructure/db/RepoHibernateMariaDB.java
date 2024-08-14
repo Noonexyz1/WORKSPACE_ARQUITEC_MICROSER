@@ -1,7 +1,7 @@
 package org.example.infraestructure.db;
 
 import org.example.application.dto.AbogadoDTO;
-import org.example.application.implement.AbogadoService;
+import org.example.application.useCase.AbogadoPersistence;
 
 import org.example.infraestructure.db.entity.AbogadoEntity;
 
@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 
-public class RepoHibernateMariaDB implements AbogadoService {
+public class RepoHibernateMariaDB implements AbogadoPersistence {
 
     private final SessionFactory sessionFactory;
 

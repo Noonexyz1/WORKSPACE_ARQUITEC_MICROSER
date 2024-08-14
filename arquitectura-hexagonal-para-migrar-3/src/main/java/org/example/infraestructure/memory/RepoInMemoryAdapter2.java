@@ -1,13 +1,13 @@
 package org.example.infraestructure.memory;
 
 import org.example.application.dto.AbogadoDTO;
-import org.example.application.implement.AbogadoService;
+import org.example.application.useCase.AbogadoPersistence;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //uso de la tecnologia
-public class RepoInMemoryAdapter2 implements AbogadoService {
+public class RepoInMemoryAdapter2 implements AbogadoPersistence {
 
     //Eso tranquilamente puede ser varios @Repository como dependencia
     private List<AbogadoDTO> abogados;

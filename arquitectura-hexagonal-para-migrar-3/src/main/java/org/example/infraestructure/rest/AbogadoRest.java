@@ -1,7 +1,8 @@
 package org.example.infraestructure.rest;
 
 import org.example.application.dto.AbogadoDTO;
-import org.example.application.implement.AbogadoService;
+import org.example.application.useCase.AbogadoMapper;
+import org.example.application.useCase.AbogadoUseCaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,21 +13,25 @@ import java.util.List;
 @RestController
 public class AbogadoRest {
 
-    @Autowired
-    private AbogadoService abogadoService;
+    private AbogadoUseCaseService abogadoUseCaseService;
+    private AbogadoMapper abogadoMapper;
 
-    public AbogadoRest(AbogadoService abogadoService){
-        this.abogadoService = abogadoService;
+    @Autowired
+    public AbogadoRest(AbogadoUseCaseService abogadoUseCaseService, AbogadoMapper abogadoMapper){
+        this.abogadoUseCaseService = abogadoUseCaseService;
+        this.abogadoMapper = abogadoMapper;
     }
 
 
     @GetMapping("/abogados")
     public List<AbogadoDTO> getAllAbogadosRest() {
-        return abogadoService.getAllAbogados();
+        return abogadoUseCaseService.listaAbogados().stream()
+                .map(abogadoMapper::abogadoToAbogadoDTO)
+                .toList();
     }
 
     @PostMapping("/guardar")
     public void saveNewAbogadoRest(AbogadoDTO nuevoAbogado) {
-        abogadoService.saveNewAbogado(nuevoAbogado);
+        abogadoUseCaseService.nuevoAbogado(abogadoMapper.abogadoDTOToAbogado(nuevoAbogado));
     }
 }
