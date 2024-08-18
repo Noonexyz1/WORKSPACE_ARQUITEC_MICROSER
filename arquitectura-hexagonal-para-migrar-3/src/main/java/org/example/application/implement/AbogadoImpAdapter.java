@@ -1,11 +1,9 @@
 package org.example.application.implement;
 
-import org.example.application.dto.AbogadoDTO;
 import org.example.application.useCase.AbogadoPersistence;
 import org.example.application.useCase.AbogadoUseCaseService;
 import org.example.domain.model.Abogado;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //esta es mi logica, implementando el puerto AbogadoUseCase de Domain
@@ -21,20 +19,11 @@ public class AbogadoImpAdapter implements AbogadoUseCaseService {
 
     @Override
     public List<Abogado> listaAbogados() {
-        List<Abogado> listAbogado = new ArrayList<>();
-        List<AbogadoDTO> listAbogadoDto = abogadoPersistence.getAllAbogados();
-
-        for(AbogadoDTO abogadoDTO: listAbogadoDto){
-            Abogado abogado = new Abogado(abogadoDTO.getId(), abogadoDTO.getNombre(), abogadoDTO.getEmail());
-            listAbogado.add(abogado);
-        }
-
-        return listAbogado;
+        return abogadoPersistence.getAllAbogados();
     }
 
     @Override
     public void nuevoAbogado(Abogado newAbogado) {
-        AbogadoDTO abogadoDTO = new AbogadoDTO(newAbogado.getId(), newAbogado.getNombre(), newAbogado.getEmail());
-        abogadoPersistence.saveNewAbogado(abogadoDTO);
+        abogadoPersistence.saveNewAbogado(newAbogado);
     }
 }
