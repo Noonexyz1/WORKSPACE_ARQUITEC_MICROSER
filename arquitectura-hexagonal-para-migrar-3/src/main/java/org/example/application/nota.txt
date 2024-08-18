@@ -23,3 +23,8 @@ la instancia y la injectamos.
 
 Si quieres usar la implementacion de AbogadoUseCaseService de la application, entonces exportarlo como puerto y
 tambien exportar AbogadoPersistence que es la dependencia de AbogadoUseCaseService
+
+
+Estoy implementando aparte, en la capa de application, un servicio de mapper para que la capa
+superior la use, porque esta logica tambien puede ir aqui, este mapper se pondra entre la infra y dominio
+por lo tanto la application debe proporcionar uno
