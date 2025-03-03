@@ -1,0 +1,2 @@
+En ese paquete infraestructure se pone toda la insfrasestructura o modulos o tecnologias
+para cumplir con los requerimientos del sistema, AQUI SI PODEMOS MEZCLAR CODIGO JAVA CON TECNOLOGIAS

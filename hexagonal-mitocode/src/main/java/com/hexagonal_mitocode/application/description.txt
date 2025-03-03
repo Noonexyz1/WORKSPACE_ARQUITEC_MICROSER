@@ -1,0 +1,2 @@
+En ese paquete application se ponene todos los use cases, y logica de aplicacion si es necesario
+mas las abstracciones PERO EN LENGUAJE PURO

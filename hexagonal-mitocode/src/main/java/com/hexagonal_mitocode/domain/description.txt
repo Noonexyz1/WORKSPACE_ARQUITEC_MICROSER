@@ -1,0 +1,2 @@
+En este paquete domain se ponen todas las entidades del negocio y logica de negocio si
+se presenta PERO EN LENGUAJE PURO
