@@ -3,11 +3,9 @@ package com.hexagonal_mitocode.infraestructure.persistence.inmemory.mapper;
 import com.hexagonal_mitocode.domain.model.Order;
 import com.hexagonal_mitocode.infraestructure.persistence.inmemory.model.OrderInMemory;
 
-public class OrderMapper {
+public class InMemoryMapper {
 
-    private OrderMapper() {}
-
-    public static OrderInMemory toOrderInMemory(Order order) {
+    public static OrderInMemory orderToOrderInMemory(Order order) {
         OrderInMemory orderInMemory = new OrderInMemory();
         orderInMemory.setId(order.getId());
         orderInMemory.setAmount(order.getAmount());
@@ -16,7 +14,7 @@ public class OrderMapper {
         return orderInMemory;
     }
 
-    public static Order toDomainModel(OrderInMemory orderInMemory) {
+    public static Order orderInMemoryToOrder(OrderInMemory orderInMemory) {
         return new Order(
                 orderInMemory.getId(),
                 orderInMemory.getProduct(),

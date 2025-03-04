@@ -14,6 +14,7 @@ import com.hexagonal_mitocode.application.port.in.GetAllOrderUseCase;
 // el flujo de operaciones y la interacción entre capas como ser las dependencias.
 import com.hexagonal_mitocode.domain.model.Order;
 
+import com.hexagonal_mitocode.infraestructure.rest.mapper.RestMapper;
 import com.hexagonal_mitocode.infraestructure.rest.model.OrderWebModel;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +39,7 @@ public class OrderController {
     public void createOrder(@RequestBody OrderWebModel orderWebModel) {
         // Transformación del modelo web (OrderWebModel) al modelo de dominio (Order).
         // Esto no viola la arquitectura hexagonal, ya que es una simple conversión de datos.
-        Order order = OrderWebModel.toDomainModel(orderWebModel);
+        Order order = RestMapper.orderWebModelToOrder(orderWebModel);
         createOrderUseCase.createOrder(order); // Delegación al caso de uso.
     }
 
@@ -48,7 +49,7 @@ public class OrderController {
         // Nuevamente, Order es solo un modelo de datos, no una dependencia acoplada.
         List<Order> orders = getAllOrderUseCase.getAllOrders();
         return orders.stream()
-                .map(OrderWebModel::fromDomainModel) // Conversión a OrderWebModel.
+                .map(RestMapper::orderToOrderWebModel) // Conversión a OrderWebModel.
                 .toList();
     }
 }
